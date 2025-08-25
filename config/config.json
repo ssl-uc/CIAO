@@ -1,0 +1,68 @@
+{
+    "MALGNN": {
+
+      "label_key_to_family": "{0:'mirai', 1:'gafgyt', 2:'tsunami'}",
+      "labels": "{'mirai':0, 'gafgyt':1, 'tsunami':2}",
+
+
+      "esil_out_dir": "ESIL_DATA_EXTRACT/esil_chunks_instr",
+      "transformer_out_dir": "ESIL_DATA_EXTRACT/transformer_data",
+      "transformer_index_file":"ESIL_DATA_EXTRACT/arm32_label_index.pkl.gz",
+      "fcg_data_dir":"FCG_DATASET",
+
+      "label_arm_train":"label/train_arm.pkl",
+      "label_mips_train":"label/train_mips.pkl",
+      "label_arm_test":"label/test_arm.pkl",
+      "label_mips_test":"label/train_mips.pkl",
+      "label_arm_val":"label/val_arm.pkl",
+      "label_mips_val":"label/val_mips.pkl",
+
+      "esil_binary_file": "ESIL_DATA_EXTRACT/word2vec_binaries.pkl",
+      "transformer_binary_file": "ESIL_DATA_EXTRACT/transformer_binaries.pkl",
+      "func_name_map": "ESIL_DATA_EXTRACT/function_rename_map.pkl",
+
+      "ops_path": "ESIL_DATA_EXTRACT/ops/",
+      "func_path": "ESIL_DATA_EXTRACT/funcs/",
+      "data_path": "FCG_DATASET",
+      
+  
+      "word2vec": {
+        "vector_size": 100,
+        "window": 2,
+        "min_count": 1,
+        "epochs": 10,
+        "sg": 0,
+        "model_file": "models/esil_instr_word2vec.model"
+      },
+  
+
+      "transformer": {
+        "device": "cuda",
+        "epochs": 50,
+        "embedding_dim": 256,
+        "input_dim":100,
+        "num_layers": 4,
+        "num_heads": 8,
+        "dropout": 0.1,
+        "batch_size": 32,
+        "learning_rate": 3e-4,
+        "max_step": 500,
+        "max_per_label": 2,
+        "MAX_LEN":512,
+        "model_file": "models/transformer_model/",
+        "final_model_name": ""
+      },
+  
+
+      "gnn": {
+        "epochs": 200,
+        "batch_size": 32,
+        "model_dir": "models"
+      }
+    },
+  
+    "baseline_image": {},
+    "baseline_cfg": {},
+    "baseline_opcode": {}
+  }
+  
