@@ -44,7 +44,7 @@
         "num_layers": 4,
         "num_heads": 8,
         "dropout": 0.1,
-        "batch_size": 32,
+        "batch_size": 16,
         "learning_rate": 3e-4,
         "max_step": 500,
         "max_per_label": 2,
