@@ -59,10 +59,6 @@
         "batch_size": 32,
         "model_dir": "models"
       }
-    },
-  
-    "baseline_image": {},
-    "baseline_cfg": {},
-    "baseline_opcode": {}
+    }
   }
   
