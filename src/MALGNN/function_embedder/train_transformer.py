@@ -98,9 +98,10 @@ class FunctionEncoder(nn.Module):
     def forward(self, x):
         x = self.input_linear(x)                      
         x = x + self.pos_embed[:, :x.size(1)]       
-        x = x.permute(1, 0, 2)                      
+        #x = x.permute(1, 0, 2)                      
         x = self.encoder(x)                         
-        x = x.permute(1, 2, 0)                      
+        #x = x.permute(1, 2, 0)                      
+        x = x.permute(0, 2, 1) 
         x = self.pool(x).squeeze(-1)                
         return self.out_proj(x)       
         
